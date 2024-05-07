@@ -1,0 +1,48 @@
+<div class="seller-auth">
+  <div class="SignUp">
+    <h1>Seller Sign-Up</h1>
+    <form
+      #sellerSignUpForm="ngForm"
+      class="common-form"
+      (ngSubmit)="SignUp(sellerSignUpForm)"
+    >
+      <input
+        type="text"
+        ngModel
+        required
+        minlength="2"
+        placeholder="Enter Name"
+        name="name"
+      />
+      <span
+        *ngIf="
+          sellerSignUpForm.controls['name'].invalid &&
+          sellerSignUpForm.controls['name'].touched
+        "
+        >*Name is required</span
+      >
+      <input
+        type="password"
+        ngModel
+        placeholder="Enter Password"
+        name="password"
+        required
+        minlength="5"
+      />
+      <span
+        *ngIf="
+          sellerSignUpForm.controls['password'].invalid &&
+          sellerSignUpForm.controls['password'].touched
+        "
+        >*Password is Invalid</span
+      >
+      <input type="email" ngModel placeholder="Enter Email" name="email" />
+      <button type="submit" [disabled]="sellerSignUpForm.invalid">
+        Sign Up
+      </button>
+      <span *ngIf="sellerSignUpForm.invalid" class="form-err"
+        >Enter the Details</span
+      >
+    </form>
+  </div>
+</div>

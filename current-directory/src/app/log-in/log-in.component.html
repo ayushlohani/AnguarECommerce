@@ -1,0 +1,39 @@
+<div class="log-in">
+  <div class="SignUp">
+    <h1>LogIn</h1>
+    <form #LoginForm="ngForm" class="common-form" (ngSubmit)="Login(LoginForm)">
+      <input
+        type="text"
+        ngModel
+        required
+        minlength="2"
+        placeholder="Enter Name"
+        name="name"
+      />
+      <span
+        *ngIf="
+          LoginForm.controls['name'].invalid &&
+          LoginForm.controls['name'].touched
+        "
+        >*Name is required</span
+      >
+      <input
+        type="password"
+        ngModel
+        placeholder="Enter Password"
+        name="password"
+        required
+        minlength="5"
+      />
+      <span
+        *ngIf="
+          LoginForm.controls['password'].invalid &&
+          LoginForm.controls['password'].touched
+        "
+        >*Password is Invalid</span
+      >
+      <button type="submit" [disabled]="LoginForm.invalid">Log In</button>
+      <span *ngIf="LoginForm.invalid" class="form-err">Enter the Details</span>
+    </form>
+  </div>
+</div>

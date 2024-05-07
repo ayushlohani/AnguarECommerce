@@ -1,0 +1,44 @@
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(55, 189, 145);
+    height: 80px;
+    .logo{
+        color: aliceblue;
+        font-size: xx-large;
+        font-weight: 700;
+        font-style: italic;
+    }
+    .search{
+        input{
+            height: 35px;
+            width: 400px;
+            padding-left: 10px;
+        }
+        button{
+            height: 35px;
+            width: 100px;
+            border: none;
+            background-color: rgb(55, 167, 98);
+            color: white;
+            &:hover{
+                cursor: pointer;
+                background-color: rgba(55, 167, 98, 0.749);
+            }
+        }
+
+    }
+    .element{
+        width: 30%;
+        display: flex;
+        justify-content: space-around;
+        li{
+            list-style: none;
+            a{
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}
