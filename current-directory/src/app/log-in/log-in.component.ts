@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class LogInComponent implements OnInit {
 
   isValidUser = false;
+  wrongCred=true;
+  loginclicked=false;
   constructor(private user:SellerServiceService,private route:Router) { }
 
   ngOnInit(): void {
@@ -19,6 +21,7 @@ export class LogInComponent implements OnInit {
     for (let x of this.user.users){
       if(x.name == val.value.name && x.password == val.value.password){
         this.isValidUser = true;
+        this.wrongCred=false;
         this.user.isLogin.next(true);
         localStorage.setItem('validUser',"True");
         console.log("yes");
@@ -28,5 +31,6 @@ export class LogInComponent implements OnInit {
     if(this.isValidUser){
       this.route.navigate(['cart']);
     }
+    this.loginclicked = true;
   }
 }

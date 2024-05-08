@@ -32,8 +32,15 @@
         "
         >*Password is Invalid</span
       >
-      <button type="submit" [disabled]="LoginForm.invalid">Log In</button>
-      <span *ngIf="LoginForm.invalid" class="form-err">Enter the Details</span>
+      <button type="submit" [disabled]="LoginForm.invalid" #LogInBtn>
+        Log In
+      </button>
+      <span *ngIf="LoginForm.invalid && loginclicked" class="form-err"
+        >Enter the Details</span
+      >
+      <div *ngIf="wrongCred && loginclicked" class="form-err">
+        **Wrong Password Or UserName
+      </div>
     </form>
   </div>
 </div>
