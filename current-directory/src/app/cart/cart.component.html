@@ -1,1 +1,30 @@
-<p>cart works!</p>
+<div class="cart-page">
+  <div class="bill">
+    <div class="title">Bill Summary</div>
+    <div class="cotent">
+      <div class="text">Total MRP</div>
+      <div class="amnt">$12</div>
+    </div>
+    <div class="cotent">
+      <div class="text">Total Discount</div>
+      <div class="amnt">$10</div>
+    </div>
+    <div class="cotent">
+      <div class="text">Final Price</div>
+      <div class="amnt">$2</div>
+    </div>
+    <button (click)="showcart()">Pay Now</button>
+  </div>
+  <div class="billed-items">
+    <div class="card" *ngFor="let x of items">
+      <app-card
+        [id]="x.id"
+        [Title]="x.Title"
+        [Price]="x.Price"
+        [Rating]="x.Rating"
+        [Description]="x.Description"
+        [ImgUrl]="x.ImgUrl"
+      ></app-card>
+    </div>
+  </div>
+</div>

@@ -5,7 +5,7 @@ import { Item } from '../data-type';
   providedIn: 'root'
 })
 export class ItemService {
-  cart:number[]=[];
+  cart:number[]=[3,1,2];
   items:Item[]=[
     {
       id:1,
